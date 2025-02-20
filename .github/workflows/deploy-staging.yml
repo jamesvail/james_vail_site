@@ -17,4 +17,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/mywebsite/frontend
-            sudo docker-compose -f docker-compose.override.yml up -d --build
+            git pull origin staging
+            docker-compose -f docker-compose.override.yml up -d --build
