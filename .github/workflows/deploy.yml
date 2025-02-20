@@ -1,0 +1,22 @@
+name: Deploy updates via DO VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to VPS & Pull Code
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DIGITALOCEAN_IP }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/mywebsite/frontend
+            git pull origin main
+            sudo docker-compose down --remove-orphans
+            sudo docker-compose up -d --build
