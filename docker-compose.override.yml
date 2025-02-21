@@ -1,8 +1,11 @@
 version: "3.8"
 
 services:
-  nextjs_app:
-    build: .
+  nextjs_app_staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs_app_staging
     environment:
       - NODE_ENV=staging
     ports:
