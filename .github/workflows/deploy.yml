@@ -16,7 +16,19 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            # pull new changes from main branch
             cd ~/mywebsite/frontend
             git pull origin main
-            sudo docker-compose down --remove-orphans
-            sudo docker-compose up -d --build
+
+            # stop old image and remove it
+            docker stop nextjs_app || true
+            docker rm nextjs_app || true
+
+            # build new image and run it
+            docker build -t mywebsite:latest .
+            docker run -d --name nextjs_app -p 3000:3000 mywebsite:latest
+
+            # get rid of old resources
+            docker image prune -f
+            docker volume prune -f
+
