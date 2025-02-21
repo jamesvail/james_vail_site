@@ -32,7 +32,3 @@ Below is my current tech stack being used, as well as other details; feel free t
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
-
-## 📊 GitHub Statistics
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jamesvail&show_icons=true&theme=dark)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jamesvail&layout=compact&theme=dark)
