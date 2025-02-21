@@ -1,4 +1,7 @@
 Hello! I am James Vail, the owner of this repository and website [Jamesvail.com](https://jamesvail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jamesvail)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jamesvail)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:james@jamesvail.com)
 
 ## About this Project
 The goal of this website is to have a place to showcase my previous and current coding proects.
@@ -15,9 +18,7 @@ to use Docker, and wow am I glad I finally put the time in to learn it.
 Below is my current tech stack being used, as well as other details; feel free to browse and please don't hesitate to reach out to me if you have any questions!
 
 ## 🤝 Social Media / Contact Information
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jamesvail)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jamesvail)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:james@jamesvail.com)
+
 
 ## 🚀 Tech Stack
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
