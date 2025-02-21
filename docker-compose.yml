@@ -12,17 +12,6 @@ services:
     environment:
       - NODE_ENV=production
 
-  nextjs_app_staging:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: nextjs_app_staging
-    restart: always
-    ports:
-      - "3001:3000"
-    environment:
-      - NODE_ENV=staging
-
   nginx:
     image: nginx:latest
     container_name: nginx_proxy
@@ -36,7 +25,6 @@ services:
       - /var/www/certbot:/var/www/certbot
     depends_on:
       - nextjs_app
-      - nextjs_app_staging
 
   certbot:
     image: certbot/certbot

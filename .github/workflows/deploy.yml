@@ -20,13 +20,9 @@ jobs:
             cd ~/mywebsite/frontend
             git pull origin main
 
-            # stop old image and remove it
-            docker stop nextjs_app || true
-            docker rm nextjs_app || true
-
-            # build new image and run it
-            docker build -t mywebsite:latest .
-            docker run -d --name nextjs_app -p 3000:3000 mywebsite:latest
+            # build new image and run it, remove old
+            docker-compose down --remove-orphans
+            docker-compose up -d --build
 
             # get rid of old resources
             docker image prune -f
