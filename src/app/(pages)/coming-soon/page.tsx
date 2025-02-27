@@ -25,13 +25,15 @@ export default function ComingSoon() {
 
     return () => clearInterval(interval);
   }, []);
-
+  
   return (
     <div className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-900 text-white">
       <h1 className="text-4xl font-bold mb-4">🚀 Coming Soon</h1>
       <p className="text-lg mb-6">
         We&apos;re launching in: <span className="font-semibold">{timeLeft}</span>
       </p>
+      <div className="bg-red-500 text-white p-4">Hello World</div>
+
     </div>
   );
 }
