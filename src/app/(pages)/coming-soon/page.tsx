@@ -6,7 +6,7 @@ export default function ComingSoon() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date("2025-03-04T00:00:00").getTime();
+      const targetDate = new Date("2025-03-07T00:00:00").getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -27,13 +27,11 @@ export default function ComingSoon() {
   }, []);
   
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center bg-gray-900 text-white">
-      <h1 className="text-4xl font-bold mb-4">🚀 Coming Soon</h1>
+    <div className="min-h-screen flex flex-col justify-center items-center text-center bg-background text-text">
+      <h1 className="text-5xl font-bold mb-4 text-accent">🚀 Coming Soon</h1>
       <p className="text-lg mb-6">
         We&apos;re launching in: <span className="font-semibold">{timeLeft}</span>
       </p>
-      <div className="bg-red-500 text-white p-4">Hello World</div>
-
     </div>
   );
 }
