@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Sidebar from "@/components/layout/sidebar";
 import Footer from "@/components/layout/footer";
+
 import "./styles/globals.css";
 
 export const metadata: Metadata = {
