@@ -21,7 +21,7 @@ const HeroPage = () => {
         <h1 className="text-4xl font-bold text-text w-full">
           <Typewriter
             options={{
-              strings: ["James Vail", "Web Developer", "Open Source Enthusiast"],
+              strings: ["James Vail", "Software Engineer", "Open Source Enthusiast"],
               autoStart: true,
               loop: true,
             }}

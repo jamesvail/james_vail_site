@@ -1,32 +1,30 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Sidebar from "@/components/layout/sidebar";
 import Footer from "@/components/layout/footer";
 import LayoutAnimation from "@/components/layout/LayoutAnimation";
+import LoadingFallback from "@/components/layout/ui/LoadingFallback";
 import "./styles/globals.css";
 
-
-{/* seo not looking too good, rework this. */}
 export const metadata: Metadata = {
   title: "James Vail | Portfolio",
-  description: "Welcome to my site! :)",
+  description: "Aspiring Full-Stack Developer interested in emerging tech.",
+  keywords: ["developer", "engineer", "portfolio", "react", "nextjs", "typescript"],
   icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-background text-text overflow-x-hidden">
-        <div className="flex min-h-screen">
-          <div className="relative z-50">
-            <Sidebar />
-          </div>
-
-          {/* main */}
-          <div className="flex flex-col flex-1 w-full">
+    <html lang="en" className="h-full">
+      <body className="bg-background text-text overflow-x-hidden flex h-full">
+        <Sidebar />
+        
+        <main className="flex flex-col flex-1 w-full">
+          <Suspense fallback={<LoadingFallback />}>  {/* not implemented yet */}
             <LayoutAnimation>{children}</LayoutAnimation>
-            <Footer />
-          </div>
-        </div>
+          </Suspense>
+          <Footer />
+        </main>
       </body>
     </html>
   );

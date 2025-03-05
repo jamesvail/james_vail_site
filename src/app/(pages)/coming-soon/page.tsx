@@ -1,37 +1,36 @@
 "use client";
-import { useState, useEffect } from "react";
 
-export default function ComingSoon() {
-  const [timeLeft, setTimeLeft] = useState<string>("");
+import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
 
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const targetDate = new Date("2025-03-07T00:00:00").getTime();
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        setTimeLeft(`${days}d ${hours}h ${minutes}m`);
-      } else {
-        setTimeLeft("Launch Time!");
-      }
-    };
-
-    calculateTimeLeft();
-    const interval = setInterval(calculateTimeLeft, 60000);
-
-    return () => clearInterval(interval);
-  }, []);
-  
+const ComingSoon = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-center bg-background text-text">
-      <h1 className="text-5xl font-bold mb-4 text-accent">🚀 Coming Soon</h1>
-      <p className="text-lg mb-6">
-        We&apos;re launching in: <span className="font-semibold">{timeLeft}</span>
-      </p>
-    </div>
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+      
+      {/* background w/ gradient, doesn't do too much. */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-primary via-secondary to-accent opacity-40"></div>
+      <div className="absolute inset-0 w-full h-full bg-[url('/images/heroBackground.jpeg')] bg-cover bg-center bg-no-repeat opacity-30"></div>
+
+      {/* page content, testing framer motion. */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }} 
+        animate={{ opacity: 1, scale: 1 }} 
+        transition={{ duration: 0.5 }}
+        className="relative p-10 bg-primary/80 rounded-lg shadow-xl hover:scale-105 transition-transform w-full max-w-[600px]"
+      >
+        <h1 className="text-4xl font-bold text-text w-full">
+          <Typewriter
+            options={{
+              strings: ["Coming Soon!!!", "I promise!!!", "Very soon!!!!"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </h1>
+        <p className="mt-2 text-lg text-secondary w-full">James Vail</p>
+      </motion.div>
+    </section>
   );
-}
+};
+
+export default ComingSoon;
