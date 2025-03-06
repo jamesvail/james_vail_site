@@ -21,7 +21,7 @@ const ComingSoon = () => {
         <h1 className="text-4xl font-bold text-text w-full">
           <Typewriter
             options={{
-              strings: ["Coming Soon!!!", "I promise!!!", "Very soon!!!!"],
+              strings: ["Coming Soon!!!", "Not Here Yet :(", "Very soon!!!!", "I promise!!"],
               autoStart: true,
               loop: true,
             }}

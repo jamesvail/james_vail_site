@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Sidebar />
         
         <main className="flex flex-col flex-1 w-full">
-          <Suspense fallback={<LoadingFallback />}>  {/* not implemented yet */}
+          <Suspense fallback={<LoadingFallback />}> 
             <LayoutAnimation>{children}</LayoutAnimation>
           </Suspense>
           <Footer />
